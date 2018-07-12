@@ -13,7 +13,10 @@
   The values for the make and model will come from two parameters, make and model (in that order).
 */
 
-// Code here
+function CarFactory(make,model){
+  this.make = make;
+  this.model = model
+}
 
 
 
@@ -31,8 +34,8 @@ function Employee(name, email, hireDate) {
   Invoke the constructor function above and pass in 'Bob', 'bob@gmail.com', and '01-02-98' as arguments.
   Assign the result of the invocation to a variable called bob.
 */
+let bob = new Employee ('Bob', 'bob@gmail.com', '01-02-98');
 
-// Code here
 
 
 
@@ -52,7 +55,18 @@ mustang.moveCar(); // Increments mustang' move property by 10. Returns the new m
   The move property will be added to every object that is being returned from the Car function.
   You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the right object (prius vs mustang).
 */
+function Car(make, model, year){
+  
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.move = 0;
+  
+  this.moveCar = function(){
+    this.move += 10;
+    return this.move;
+  }
+}
 
-// Code here
 
 
